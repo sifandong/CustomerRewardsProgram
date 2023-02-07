@@ -44,9 +44,9 @@ public class CustomerServiceImplTest {
     public void getCustomerById() throws Exception{
 
         mockMvc.perform(get("/customers/1"))
-                .andExpect(status().isOk());
-//                .andExpect(jsonPath("$.id", is(1)))
-//                .andExpect(jsonPath("$.name", is("John")));
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id", is(1)))
+                .andExpect(jsonPath("$.name", is("John")));
     }
 
 }

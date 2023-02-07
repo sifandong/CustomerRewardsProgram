@@ -26,12 +26,15 @@ DROP TABLE IF EXISTS `transaction`;
 CREATE TABLE customer (
     id INT unsigned NOT NULL AUTO_INCREMENT,
     name VARCHAR(20),
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE transaction (
     id INT unsigned NOT NULL AUTO_INCREMENT,
-    date VARCHAR(255);
-    amount INT;
-    rewards INT;
+    date VARCHAR(255),
+    amount INT,
+    rewards INT,
+    PRIMARY KEY (id),
+    FOREIGN KEY (customer_id) REFERENCES customer(id)
 )
 ```
