@@ -43,9 +43,9 @@ public class CustomerController {
     }
 
     @GetMapping("/customers/rewards")
-    public int getCustomerRewardsBetweenDates(@RequestParam int id,
+    public ResponseEntity<Integer> getCustomerRewardsBetweenDates(@RequestParam int id,
                                               @RequestParam Date startDate,
                                               @RequestParam Date endDate) {
-        return customerService.getRewardsBetweenStartDateAndEndDate(id,startDate,endDate);
+        return new ResponseEntity<>(customerService.getRewardsBetweenStartDateAndEndDate(id,startDate,endDate), HttpStatus.OK);
     }
 }
