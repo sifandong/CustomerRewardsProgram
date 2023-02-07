@@ -33,7 +33,7 @@ public class CustomerController {
 
     @PostMapping("/customers")
     public void createCustomer(@RequestBody CustomerDTO customerDTO) {
-
+        customerService.createCustomer(customerDTO);
     }
 
     @DeleteMapping("/customers/{id}")

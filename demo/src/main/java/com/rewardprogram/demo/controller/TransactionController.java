@@ -31,7 +31,7 @@ public class TransactionController {
 
     @PostMapping("/transactions")
     public void createTransaction(@RequestBody TransactionDTO transactionDTO){
-
+        transactionService.createTransaction(transactionDTO);
     }
     @DeleteMapping("/transactions/{id}")
     public void deleteTransaction(@PathVariable int id) {

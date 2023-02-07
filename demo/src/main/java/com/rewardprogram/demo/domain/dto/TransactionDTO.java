@@ -15,10 +15,12 @@ public class TransactionDTO {
     private String date;
     private int amount;
     private int rewards;
+    private int customerId;
     public TransactionDTO(Transaction transaction) {
         this.id = transaction.getId();
         this.date = transaction.getDate();
         this.amount = transaction.getAmount();
         this.rewards = transaction.getRewards();
+        this.customerId = transaction.getCustomer().getId();
     }
 }

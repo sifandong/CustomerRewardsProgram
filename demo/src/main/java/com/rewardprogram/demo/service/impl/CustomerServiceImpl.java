@@ -44,7 +44,9 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void createCustomer(CustomerDTO customerDTO) {
-
+        Customer customer = new Customer();
+        customer.setName(customerDTO.getName());
+        customerRepo.save(customer);
     }
 
     @Override
@@ -61,4 +63,6 @@ public class CustomerServiceImpl implements CustomerService {
                 .mapToInt(Transaction::getRewards)
                 .sum();
     }
+
+
 }
