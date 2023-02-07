@@ -27,4 +27,8 @@ public class Transaction {
     @Column(name = "rewards")
     private int rewards;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+
 }
