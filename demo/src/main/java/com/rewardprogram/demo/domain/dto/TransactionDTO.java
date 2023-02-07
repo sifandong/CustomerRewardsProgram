@@ -6,13 +6,15 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.Date;
+
 @Getter
 @Setter
 @ToString
 @EqualsAndHashCode
 public class TransactionDTO {
     private int id;
-    private String date;
+    private Date date;
     private int amount;
     private int rewards;
     private int customerId;

@@ -1,11 +1,12 @@
 package com.rewardprogram.demo.domain;
 
-import com.rewardprogram.demo.domain.dto.TransactionDTO;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.util.Date;
 
 @Entity
 @Table(name = "transaction")
@@ -19,7 +20,7 @@ public class Transaction {
     private int id;
 
     @Column(name = "date")
-    private String date;
+    private Date date;
 
     @Column(name = "amount")
     private int amount;

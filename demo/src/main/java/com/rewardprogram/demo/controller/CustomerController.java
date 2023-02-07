@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -32,8 +33,8 @@ public class CustomerController {
     }
 
     @PostMapping("/customers")
-    public void createCustomer(@RequestBody CustomerDTO customerDTO) {
-        customerService.createCustomer(customerDTO);
+    public ResponseEntity<Integer> createCustomer(@RequestBody CustomerDTO customerDTO) {
+        return new ResponseEntity<>(customerService.createCustomer(customerDTO), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/customers/{id}")
@@ -43,8 +44,8 @@ public class CustomerController {
 
     @GetMapping("/customers/rewards")
     public int getCustomerRewardsBetweenDates(@RequestParam int id,
-                                              @RequestParam String startDate,
-                                              @RequestParam String endDate) {
+                                              @RequestParam Date startDate,
+                                              @RequestParam Date endDate) {
         return customerService.getRewardsBetweenStartDateAndEndDate(id,startDate,endDate);
     }
 }

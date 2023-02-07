@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 public class TransactionController {
-    private TransactionService transactionService;
+    private final TransactionService transactionService;
     @Autowired
     public TransactionController(TransactionService transactionService) {
         this.transactionService = transactionService;
@@ -30,8 +30,8 @@ public class TransactionController {
     }
 
     @PostMapping("/transactions")
-    public void createTransaction(@RequestBody TransactionDTO transactionDTO){
-        transactionService.createTransaction(transactionDTO);
+    public ResponseEntity<Integer> createTransaction(@RequestBody TransactionDTO transactionDTO){
+        return new ResponseEntity<>(transactionService.createTransaction(transactionDTO), HttpStatus.CREATED);
     }
     @DeleteMapping("/transactions/{id}")
     public void deleteTransaction(@PathVariable int id) {
