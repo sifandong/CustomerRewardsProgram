@@ -55,7 +55,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public int getRewardsBetweenStartDateAndEndDate(int id, Date startDate, Date endDate) {
-        List<Transaction> list = transactionRepo.findByDateCreatedBetween(startDate, endDate);
+        List<Transaction> list = transactionRepo.findByDateBetween(startDate, endDate);
         return list
                 .stream()
                 .filter(t -> t.getCustomer().getId() == id)
