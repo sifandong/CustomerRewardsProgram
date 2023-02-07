@@ -15,7 +15,7 @@ This is a Spring Boot application that used to demostrate Web APIs for Chrter As
 * run it using java -jar or open it in your IDE to execute the main method
 
 
-
+## SQL
 ```sql
 CREATE DATABASE customerRewards;
 use customerRewards;
